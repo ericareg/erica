@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('../img/fudo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(255, 230, 240, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+nav a, a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: #0066cc;
+}
+
+img.foto {
+  width: 200px;
+  border-radius: 50%;
+  margin: 15px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+div.galeria img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.galeria img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.galeria img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #ff99cc, 0 0 25px #ff99cc;
+}
+
+a.neon {
+  padding: 8px 16px;
+  border: 2px solid #ff66cc;
+  border-radius: 8px;
+  color: #ff66cc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff66cc;
+}
+
+a.neon:hover {
+  background-color: #ff66cc;
+  color: white;
+  box-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+}
+
+@font-face {
+  font-family: 'Fonte1';
+  src: url('../fontes/MinhaFonte2.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'Fonte1', sans-serif;
+  color: #ff66cc;
+}
+
+.titulo-com-gif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.gif-titulo {
+  width: 50px;
+  height: auto;
+}
+
+.neon-piscar {
+  color: #ff66cc;
+  text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc;
+  animation: neonpiscar 1.2s infinite alternate;
+}
+
+@keyframes neonpiscar {
+  from {
+    text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc;
+  }
+  to {
+    text-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+  }
+}

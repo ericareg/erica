@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('../img/fudo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+.container {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(255, 230, 240, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+
+a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: #0066cc;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Fonte1';
+  src: url('../fontes/MinhaFonte2.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'Fonte1', sans-serif;
+  color: #ff66cc;
+}
+
+.hobby-setor {
+  margin-bottom: 40px;
+}
+
+.hobby-setor h2 {
+  color: #ff66cc;
+  margin-bottom: 10px;
+}
+
+.hobby-setor p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.galeria img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 102, 204, 0.4);
+}
+
+.destaque {
+  border: 5px solid #ff66cc;
+  border-radius: 12px;
+  box-shadow: 0 0 200px #ff66cc;
+  animation: brilho-pulso 0.5s infinite alternate;
+}
+
+@keyframes brilho-pulso {
+  from {
+    box-shadow: 0 0 20px #ff66cc;
+  }
+  to {
+    box-shadow: 0 0 20px #ff66cc;
+  }
+}
+
+.carrossel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carrossel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-container img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff66cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.anterior {
+  left: 10px;
+}
+
+.proximo {
+  right: 10px;
+}
+
+.btn:hover {
+  background-color: #e055b6;
+}
+
+
+
