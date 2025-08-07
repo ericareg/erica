@@ -1,80 +1,80 @@
-body {
-  background: url('../img/fundo-gamer.gif') no-repeat center center fixed;
-  background-size: cover;
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   font-family: 'Orbitron', sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-  cursor: url('../img/cursor-pixel.png'), auto;
+  background-color: black;
 }
 
-.titulo-glitch {
-  font-size: 2.8rem;
-  color: #0ff;
+canvas#pixelCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.container {
   position: relative;
-  animation: glitch 1s infinite;
-  text-shadow: 2px 2px #ff00c8;
+  z-index: 1;
+  padding: 40px;
+  color: white;
+  text-align: center;
 }
 
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+.nav-central {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.neon {
+  text-decoration: none;
+  color: #0ff;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+.titulo {
+  font-size: 32px;
+  color: #ff66cc;
+  text-shadow: 0 0 5px #ff66cc;
 }
 
 .galeria-jogos {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .jogo-card {
-  width: 220px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid #00ffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #0ff;
   border-radius: 12px;
-  box-shadow: 0 0 15px #00ffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 15px;
+  padding: 16px;
+  width: 300px;
+  height: 420px; /* altura aumentada */
+  box-shadow: 0 0 15px #0ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
 }
 
 .jogo-card img {
   width: 100%;
+  height: 350px; /* altura maior para imagem */
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
 }
 
-.jogo-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff00ff;
-}
-
-nav {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-nav a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border: 2px solid #ff66cc;
-  border-radius: 10px;
-  color: #ff66cc;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0 0 10px #ff66cc;
-  font-size: 1.1em;
-}
-
-nav a:hover {
-  background-color: #ff66cc;
-  color: white;
-  box-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+.jogo-card h2 {
+  margin-top: auto; /* empurra o título para o final do card */
+  font-size: 22px;
+  color: #fff;
+  text-shadow: 0 0 4px #0ff;
 }

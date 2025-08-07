@@ -1,48 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>🎮 Meus Jogos Favoritos</title>
+  <title>🎮 Jogos Pixelados</title>
   <link rel="stylesheet" href="estilos/jogos.css">
 </head>
 <body>
-  <div class="grain"></div>
-
+  <canvas id="pixelCanvas"></canvas>
   <div class="container">
     <nav class="nav-central">
-      <a href="index.html" class="neon">🏠 Início</a>
-      <a href="hobbies.html" class="neon">✨ Voltar para Hobbies</a>
+        <a href="index.html"class="neon">🏠 Home</a>
+        <a href="hobbies.html"class="neon">🎨 Gostos</a>
+        <a href="musicas.html"class="neon">🎵 Músicas</a>
+        <a href="familia.html" class="neon" onclick="tocarSom()">👨‍👩‍👧 Pessoas</a>
+        <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
     </nav>
-
-    <h1 class="titulo-glitch">🎮 Meus Jogos Favoritos 🎮</h1>
-
+    <h1 class="titulo">🎮 Meus Jogos Favoritos 🎮</h1>
     <section class="galeria-jogos">
-      <!-- Cada jogo é um card -->
       <div class="jogo-card">
-        <img src="img/stardew.png" alt="Jogo 1">
-        <h2>Mario Kart</h2>
-      </div>
-      <div class="jogo-card">
-        <img src="img/tlou.png" alt="Jogo 2">
-        <h2>League of Legends</h2>
+        <img src="img/tlou.png" alt="Jogo 1">
+        <h2>The last of us</h2>
       </div>
       <div class="jogo-card">
         <img src="img/hollo.png" alt="Jogo 2">
-        <h2>League of Legends</h2>
+        <h2>Hollow knight</h2>
       </div>
       <div class="jogo-card">
-        <img src="img/roblox.jpg" alt="Jogo 2">
-        <h2>League of Legends</h2>
+        <img src="img/hello.jpg" alt="Jogo 1">
+        <h2>Hello kitty</h2>
       </div>
-
       <div class="jogo-card">
-        <img src="img/hello.jpg" alt="Jogo 2">
-        <h2>League of Legends</h2>
+        <img src="img/stardew.png" alt="Jogo 1">
+        <h2>Stardew valley</h2>
       </div>
-      
+      <div class="jogo-card">
+        <img src="img/roblox.jpg" alt="Jogo 1">
+        <h2>Dress to impress</h2>
+      </div>
     </section>
   </div>
-
   <script src="js/jogos.js"></script>
 </body>
 </html>

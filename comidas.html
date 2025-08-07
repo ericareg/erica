@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <title>Meus Hobbies</title>
+  <title>Comidas Favoritas</title>
   <link rel="stylesheet" href="estilos/comida.css">
 </head>
+
 <body>
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/sopa.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+  <canvas id="grainCanvas"></canvas>
 
+  <div class="container">
+    <nav class="nav-central">
+      <a href="index.html" class="neon">🏠 Início</a>
+      <a href="hobbies.html" class="neon">💖 Hobbies</a>
+      <a href="jogos.html" class="neon">🎮 Jogos</a>
+    </nav>
 
+    <h1 class="titulo">🍕 Minhas Comidas Favoritas 🍰</h1>
+
+    <div class="galeria-comidas">
+      <div class="comida-card">
+        <img src="img/pizza.jpg" alt="Pizza">
+        <h2>Pizza</h2>
+      </div>
+      <div class="comida-card">
+        <img src="img/sushi.jpg" alt="Sushi">
+        <h2>Sushi</h2>
+      </div>
+      <div class="comida-card">
+        <img src="img/brigadeiro.jpg" alt="Brigadeiro">
+        <h2>Brigadeiro</h2>
+      </div>
+      <div class="comida-card">
+        <img src="img/macarrao.jpg" alt="Macarrão">
+        <h2>Macarrão</h2>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/comida.js"></script>
 </body>
+
 </html>
