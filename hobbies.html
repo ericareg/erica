@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Meus Hobbies</title>
   <link rel="stylesheet" href="estilos/hobbies.css">
 </head>
+
 <body>
-    <section class="hobby-galeria">
-    <a href="index.html" class="neon">🔙 Voltar</a>
-    <h2>Escolha um hobby para saber mais</h2>
+  <nav>
+    <a href="index.html" class="neon" onclick="tocarSom()">🏠 Home</a>
+    <a href="familia.html" class="neon" onclick="tocarSom()">👨‍👩‍👧 Minha Família</a>
+    <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
+  </nav>
+  <section class="hobby-galeria">
     <div class="galeria-links">
 
-        <a href="filmes.html" class="hobby-card">
+      <a href="filmes.html" class="hobby-card">
         <img src="img/filme.png" alt="Filmes e Séries">
         <span>Filmes e Séries</span>
-        </a>
+      </a>
 
-        <a href="comidas.html" class="hobby-card">
+      <a href="comidas.html" class="hobby-card">
         <img src="img/comida.png" alt="Compras">
         <span>Comidas</span>
-        </a>
+      </a>
 
-        <a href="jogos.html" class="hobby-card">
+      <a href="jogos.html" class="hobby-card">
         <img src="img/jogo.png" alt="Jogos">
         <span>Jogos</span>
-        </a>
+      </a>
 
-        <a href="musicas.html" class="hobby-card">
+      <a href="musicas.html" class="hobby-card">
         <img src="img/musica.png" alt="Música">
         <span>Música</span>
-        </a>
+      </a>
 
     </div>
-    </section>
-
+  </section>
+  <script src="js/hobbies.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,30 +7,48 @@
   <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
-    <div class="container">
+  
+  <div class="container">
+    <div class="titulo-com-gif">
+      <img src="img/gif.gif" alt="Decoração esquerda" class="gif-titulo">
+      <h1 class="neon-piscar">Olá! Eu sou Erica </h1>
+      <img src="img/gif.gif" alt="Decoração direita" class="gif-titulo">
+    </div>   
 
-        <div class="titulo-com-gif">
-        <img src="img/gif.gif" alt="Decoração esquerda" class="gif-titulo">
-        <h1 class="neon-piscar">Olá! Eu sou Erica</h1>
-        <img src="img/gif.gif" alt="Decoração direita" class="gif-titulo">
-        </div>         
-        <p>Estou no oitavo período de Ciência da Computação e sou uma Twister desde 2023.</p>
-        <nav>
-            <a href="hobbies.html" class="neon">👉 Coisas que eu gosto</a>
-            <a href="familia.html"class="neon">🐶 Conheça minhas pessoas</a>
-            <a href="quiz.html"class="neon">📝 Quiz </a>
-        </nav>
-        <div class="galeria">
-                <img src="img/eulinda.jpg" alt="Foto 1">
-                <img src="img/olho.jpg" alt="Foto 2">
-                <img src="img/restaurante.jpg" alt="Foto 3">
-                <img src="img/dentinho.jpg" alt="Foto 4">
-                <img src="img/sorriso.JPG" alt="Foto 5">
-                <img src="img/grito.jpg" alt="Foto 6">
-                <img src="img/cenioura.jpg" alt="Foto 7">
-                <img src="img/pulapula.jpg" alt="Foto 8">
+    <p class="frase">🌟 Twistter desde 2023! 🌟</p>
+
+    
+    <nav>
+      <a href="hobbies.html" class="neon" onclick="tocarSom()">🎨 Gostos</a>
+      <a href="familia.html" class="neon" onclick="tocarSom()">👨‍👩‍👧 Pessoas</a>
+      <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
+    </nav>
+
+    <div class="dados-pessoais">
+        <div class="dado">
+            <span class="emoji">🎂</span>
+            <span class="texto"><strong>Idade:</strong> 21 anos</span>
+        </div>
+        <div class="dado">
+            <span class="emoji">🎓</span>
+            <span class="texto"><strong>Curso:</strong> Ciência da Computação</span>
+        </div>
+        <div class="dado">
+            <span class="emoji">📅</span>
+            <span class="texto"><strong>Período:</strong> 8º período</span>
         </div>
     </div>
- 
+
+
+    <div class="galeria">
+      <img src="img/eulinda.jpg" alt="Foto 1">
+      <img src="img/olho.jpg" alt="Foto 2">
+      <img src="img/grito.jpg" alt="Foto 6">
+      <img src="img/pulapula.jpg" alt="Foto 8">
+    </div>
+  </div>
+
+  <audio id="somClique" src="audio/clique.mp3"></audio>
+  <script src="js/home.js"></script>
 </body>
 </html>
