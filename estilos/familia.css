@@ -89,8 +89,8 @@ body {
 }
 
 .carrossel-container img {
-  width: 320px;
-  height: 220px;
+  width: 420px;
+  height: 300px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 8px 22px rgba(255,105,180,.35);

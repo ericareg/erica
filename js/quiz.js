@@ -42,13 +42,10 @@ document.getElementById('quizForm').onsubmit = function(event) {
   document.getElementById('resultado').innerHTML = `
     <h2>🎉 Parabéns!</h2>
     <p>Você acertou <strong>${acertos}</strong> perguntas!</p>
-    <img src="img/parabens.jpg" alt="Parabéns" style="max-width:200px; margin-top:15px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.3);">
+    <img src="img/lupe5.jpg" alt="Parabéns" style="width:400px; margin-top:15px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.3);">
     </br>
     </br>
     </br>
-
-
-    <a href="index.html">Voltar ao início</a>
   `;
 };
 

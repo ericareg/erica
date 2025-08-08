@@ -1,3 +1,6 @@
+/* Import da nova fonte para título */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
 @font-face {
   font-family: 'Fonte1';
   src: url('../fontes/MinhaFonte2.ttf') format('truetype');
@@ -14,13 +17,11 @@ body {
       transparent 200px),
     url('../img/cinema.avif') no-repeat center center fixed;
   background-size: cover;
-  background-size: cover;
   overflow-x: hidden;
   position: relative;
 }
 
-
-
+/* Animação inicial tela preta */
 body::after {
   content: "";
   position: fixed;
@@ -32,22 +33,17 @@ body::after {
 }
 
 @keyframes fadeOutTela {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
+/* Container */
 .container {
   max-width: 960px;
   margin: 60px auto;
   padding: 40px;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   box-shadow: 0 0 40px rgba(255, 102, 204, 0.2);
@@ -56,6 +52,7 @@ body::after {
   z-index: 1;
 }
 
+/* Cortina animada */
 .tela::before,
 .tela::after {
   content: "";
@@ -68,61 +65,32 @@ body::after {
   animation: cortina 2.5s ease forwards;
 }
 
-.tela::before {
-  left: 0;
-}
-
-.tela::after {
-  right: 0;
-}
+.tela::before { left: 0; }
+.tela::after { right: 0; }
 
 @keyframes cortina {
-  0% {
-    width: 50%;
-  }
-
-  100% {
-    width: 0;
-  }
+  from { width: 50%; }
+  to { width: 0; }
 }
 
+/* ======= Título ======= */
 h1 {
-  font-family: 'Fonte1', sans-serif;
-  font-size: 2.5em;
-  color: #ff66cc;
-  text-shadow: 0 0 10px #ff66cc;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: #000000;
+  text-shadow: 0 0 10px #ff66cc, 0 0 20px rgba(255,102,204,0.6);
   animation: zoomCine 2s ease-out;
 }
 
 @keyframes zoomCine {
-  0% {
-    transform: scale(4);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.frase-filme {
-  font-size: 1.2em;
-  font-style: italic;
-  color: #fff8dc;
-  text-shadow: 1px 1px 3px #000;
-  margin-top: -10px;
-  margin-bottom: 30px;
-}
 
-.citacao {
-  font-style: italic;
-  font-size: 1.1em;
-  color: #ffccff;
-  margin: 20px 0 40px;
-  text-shadow: 0 0 4px #000;
-}
 
+
+/* Navegação */
 nav {
   text-align: center;
   margin-bottom: 20px;
@@ -139,7 +107,7 @@ nav a {
   font-weight: bold;
   transition: 0.3s;
   box-shadow: 0 0 10px #ff66cc;
-  font-size: 1.1em;
+  font-size: clamp(0.9rem, 2.2vw, 1.1em);
 }
 
 nav a:hover {
@@ -148,6 +116,7 @@ nav a:hover {
   box-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
 }
 
+/* ======= Carrossel ======= */
 .carrossel {
   position: relative;
   width: 100%;
@@ -164,8 +133,8 @@ nav a:hover {
 }
 
 .carrossel-container img {
-  width: 220px;
-  height: 300px;
+  width: clamp(150px, 28vw, 220px);
+  height: clamp(200px, 38vw, 300px);
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -178,6 +147,7 @@ nav a:hover {
   filter: brightness(1.1) saturate(1.2);
 }
 
+/* Botões do carrossel */
 .btn {
   position: absolute;
   top: 50%;
@@ -185,7 +155,7 @@ nav a:hover {
   background-color: #ff66cc;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 50%;
   font-size: 20px;
@@ -198,18 +168,11 @@ nav a:hover {
   box-shadow: 0 0 25px #ff99cc;
 }
 
-.anterior {
-  left: 10px;
-}
+.anterior { left: 10px; }
+.proximo { right: 10px; }
 
-.proximo {
-  right: 10px;
-}
-
+/* Banner em destaque */
 .destaque-banner {
-  margin: 40px auto 0;
-  max-width: 300px;
-  text-align: center;
   animation: destaquePulse 3s infinite;
 }
 
@@ -220,17 +183,11 @@ nav a:hover {
 }
 
 @keyframes destaquePulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.03);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
 }
 
+/* Botão voltar ao topo */
 .topo {
   position: fixed;
   bottom: 30px;
@@ -252,6 +209,7 @@ nav a:hover {
   box-shadow: 0 0 25px #ff99cc;
 }
 
+/* Efeito brilho cursor */
 .brilho {
   position: absolute;
   width: 8px;
@@ -264,13 +222,35 @@ nav a:hover {
 }
 
 @keyframes explodir {
-  0% {
-    opacity: 1;
-    transform: scale(1) translate(0, 0);
+  from { opacity: 1; transform: scale(1) translate(0, 0); }
+  to { opacity: 0; transform: scale(2) translate(20px, 20px); }
+}
+
+/* ======= Ajustes para telas pequenas ======= */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
   }
 
-  100% {
-    opacity: 0;
-    transform: scale(2) translate(20px, 20px);
+  .carrossel-container {
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    display: block;
+    margin: 8px auto;
+    width: 80%;
+  }
+  
+  .carrossel-container img:hover {
+    transform: none; /* remove zoom no mobile */
   }
 }

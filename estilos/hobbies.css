@@ -1,14 +1,17 @@
+/* Tipografia adicional para os rótulos dos cards */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  background: #000;
+  background: #000; /* fallback */
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden;            /* permite rolagem vertical */
   position: relative;
   z-index: 0;
 }
 
+/* Glow de fundo */
 body::before {
   content: "";
   position: fixed;
@@ -24,25 +27,28 @@ body::before {
 }
 
 @keyframes brilhoFundo {
-  0% { transform: scale(1) rotate(0deg); opacity: 0.3; }
-  50% { transform: scale(1.3) rotate(180deg); opacity: 0.6; }
-  100% { transform: scale(1) rotate(360deg); opacity: 0.3; }
+  0%   { transform: scale(1)   rotate(0deg);   opacity: 0.3; }
+  50%  { transform: scale(1.3) rotate(180deg); opacity: 0.6; }
+  100% { transform: scale(1)   rotate(360deg); opacity: 0.3; }
 }
 
+/* Sua fonte personalizada permanece para títulos h2 */
 @font-face {
   font-family: 'Fonte1';
   src: url('../fontes/MinhaFonte2.ttf') format('truetype');
 }
 
+/* Título da página (mantido) */
 h2 {
   font-family: 'Fonte1', sans-serif;
-  font-size: 2.2em;
+  font-size: clamp(1.8rem, 3.8vw, 2.4rem);
   color: #ff66cc;
   text-shadow: 0 0 10px #ff66cc;
-  margin-bottom: 30px;
-  margin-top: 50px;
+  margin-bottom: clamp(18px, 4vw, 30px);
+  margin-top: clamp(24px, 6vw, 50px);
 }
 
+/* Navegação */
 nav {
   text-align: center;
   margin-top: 30px;
@@ -59,7 +65,7 @@ nav a {
   font-weight: bold;
   transition: 0.3s;
   box-shadow: 0 0 10px #ff66cc;
-  font-size: 1.1em;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
 }
 
 nav a:hover {
@@ -68,19 +74,22 @@ nav a:hover {
   box-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
 }
 
+/* Seção */
 .hobby-galeria {
   text-align: center;
-  padding: 40px 20px;
+  padding: clamp(24px, 5vw, 40px) clamp(14px, 4vw, 20px);
 }
 
+/* ====== GRID RESPONSIVO PARA OS CARDS ====== */
 .galeria-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* cards maiores */
+  gap: clamp(20px, 5vw, 50px);
+  margin-top: clamp(24px, 6vw, 50px);
+  align-items: start;
 }
 
+/* ====== CARD ====== */
 .hobby-card {
   display: flex;
   flex-direction: column;
@@ -90,14 +99,17 @@ nav a:hover {
   background: linear-gradient(135deg, #fff0f9, #ffe6f0);
   border-radius: 24px;
   box-shadow: 0 0 25px rgba(255, 102, 204, 0.3);
-  padding: 24px;
-  width: 260px;
-  height: 340px;
+  padding: clamp(18px, 3.8vw, 26px);
+  width: 100%;
+  max-width: 300px;              /* teto para colunas largas */
+  height: 500px;                  /* deixa o conteúdo definir a altura */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  margin-inline: auto;           /* centraliza quando sobrar espaço */
 }
 
+/* brilho suave girando dentro do card */
 .hobby-card::before {
   content: "";
   position: absolute;
@@ -107,38 +119,44 @@ nav a:hover {
   height: 200%;
   background: radial-gradient(circle, #ff99cc 0%, transparent 70%);
   filter: blur(60px);
-  opacity: 0.2;
+  opacity: 0.18;
   animation: brilhoCard 6s linear infinite;
   z-index: 0;
 }
 
 @keyframes brilhoCard {
-  0% { transform: rotate(0deg); }
+  0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+/* Imagem com proporção uniforme (maior) */
 .hobby-card img {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 4 / 3;          /* torna a imagem mais alta/larga sem distorcer */
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   z-index: 1;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  height: 400px;
 }
 
+/* Texto do card com fonte arredondada (“bonitinha”) */
 .hobby-card span {
-  margin-top: 30px; /* aumente para abaixar */
-  font-weight: bold;
-  font-size: 1.3em;
+  margin-top: clamp(14px, 3vw, 22px);
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.6vw, 1.5rem);  /* maior e responsivo */
   color: #660033;
   z-index: 1;
+  text-shadow: 0 0 8px rgba(255,102,204,0.35);
 }
 
-
 .hobby-card:hover {
-  transform: scale(1.08);
+  transform: scale(1.06);
   box-shadow: 0 0 30px #ff66cc;
 }
 
+/* ====== EFEITOS DO CURSOR ====== */
 .brilho {
   position: absolute;
   width: 8px;
@@ -151,13 +169,21 @@ nav a:hover {
 }
 
 @keyframes explodir {
-  0% {
-    opacity: 1;
-    transform: scale(1) translate(0, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(2) translate(20px, 20px);
+  0%   { opacity: 1; transform: scale(1) translate(0, 0); }
+  100% { opacity: 0; transform: scale(2) translate(20px, 20px); }
+}
+
+/* ====== AJUSTES FINOS PARA TELAS PEQUENAS ====== */
+@media (max-width: 560px) {
+  body::before { filter: blur(90px); opacity: 0.35; }
+
+  .hobby-card:hover {
+    transform: scale(1.03); /* hover mais sutil em mobile */
+    box-shadow: 0 0 22px #ff66cc;
   }
 }
 
+/* Acessibilidade: menos movimento se o usuário preferir */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

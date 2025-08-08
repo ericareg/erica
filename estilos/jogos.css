@@ -1,94 +1,181 @@
-body,
-html {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&display=swap');
+
+/* ===== Base ===== */
+html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* permita rolar verticalmente; esconda apenas rolagem horizontal */
+  overflow-x: hidden;
   font-family: 'Orbitron', sans-serif;
   background-color: black;
+  color: #fff;
 }
 
+/* Canvas de pixels ao fundo */
 canvas#pixelCanvas {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
 
+/* Container de conteúdo */
 .container {
   position: relative;
   z-index: 1;
-  padding: 40px;
-  color: white;
+  padding-inline: clamp(16px, 4vw, 48px);
+  padding-block: clamp(24px, 5vw, 60px);
   text-align: center;
 }
 
+/* Nav superior */
 .nav-central {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: clamp(12px, 3vw, 24px);
 }
 
 .neon {
   text-decoration: none;
   color: #0ff;
   font-weight: bold;
-  font-size: 18px;
+  font-size: clamp(14px, 1.8vw, 18px);
   text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
 }
 
+/* Título */
 .titulo {
-  font-size: 32px;
-  color: #ff66cc;
-  text-shadow: 0 0 5px #ff66cc;
-  margin-bottom: 110px;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: clamp(20px, 4vw, 36px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #00e5ff;
+  text-shadow:
+    0 0 6px #00e5ff,
+    0 0 16px rgba(0,229,255,.55),
+    0 0 28px rgba(0,229,255,.35);
+  margin-top: clamp(24px, 5vw, 50px);
+  margin-bottom: clamp(24px, 7vw, 60px);
 }
 
+/* ===== Galeria de cards (responsivo) ===== */
+/* Troca para Grid responsivo, mais estável que Flex com cartões altos */
 .galeria-jogos {
-  display: flex;
-  flex-wrap: wrap;
-  /* permite quebrar linha se não couber */
-  justify-content: center;
-  /* centraliza */
-  gap: 20px;
-  /* espaço entre os cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  align-items: start; /* evita desalinhamento vertical quando alturas variam */
 }
 
-.jogo-card img {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-
+/* Card */
 .jogo-card {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #0ff;
   border-radius: 12px;
-  padding: 16px;
-  width: 300px;
-  height: 420px;
+  padding: 12px;
+  width: 100%;
+  max-width: 340px;       /* teto (em colunas largas) */
+  margin-inline: auto;    /* centraliza quando sobrar espaço */
   box-shadow: 0 0 15px #0ff;
   display: flex;
-  flex: 0 0 250px;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  justify-content: flex-start;
+  gap: 10px;
+
+  /* altura automática para eliminar “sobra” forçada */
+  height: auto;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: center center;
+  will-change: transform;
 }
 
+.jogo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+}
+
+/* Imagem do card: padronize a proporção para não quebrar o layout */
 .jogo-card img {
   width: 100%;
-  height: 350px;
-  /* altura maior para imagem */
+  aspect-ratio: 4 / 5;   /* escolha a razão que preferir: 16/9, 1/1, 3/4, etc. */
   object-fit: cover;
   border-radius: 8px;
+  display: block;        /* remove espaço de inline-images */
+  border-bottom: 2px solid rgba(0,229,255,.35);
 }
 
+/* Título dentro do card */
 .jogo-card h2 {
-  margin-top: auto;
-  /* empurra o título para o final do card */
-  font-size: 22px;
-  color: #fff;
-  text-shadow: 0 0 4px #0ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(12px, 1.6vw, 18px);
+  color: #cfffff;
+  text-shadow: 0 0 6px rgba(0,229,255,.45);
+  margin: 8px 8px 10px;
+}
+
+/* Partículas de brilho (efeito do seu JS) */
+.brilho {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #75d4d4, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: explodir 0.8s ease-out forwards;
+}
+
+/* ===== Media Queries (ajustes finos) ===== */
+
+/* Tablets e abaixo */
+@media (max-width: 1024px) {
+  .jogo-card {
+    max-width: 320px;
+  }
+}
+
+/* Celulares médios/pequenos */
+@media (max-width: 768px) {
+  .neon { font-size: 16px; }
+  .jogo-card {
+    padding: 10px;
+    max-width: 300px;
+  }
+  .galeria-jogos {
+    gap: 18px;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 480px) {
+  .jogo-card:hover {
+    /* hover mais sutil em telas pequenas */
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+  }
+}
+
+/* Desativar efeitos de hover em dispositivos sem hover (toque) */
+@media (hover: none) {
+  .jogo-card:hover {
+    transform: none;
+    box-shadow: 0 0 15px #0ff;
+  }
+}
+
+/* Acessibilidade: respeitar preferência de redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .jogo-card,
+  .jogo-card:hover,
+  .titulo,
+  .galeria-jogos {
+    transition: none !important;
+  }
 }
