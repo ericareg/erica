@@ -1,15 +1,124 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: url('../img/dança.gif') no-repeat center center fixed;
-  background-size: cover;
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bungee&display=swap');
+
+:root{
+  --c1:#00e5ff;      /* ciano neon */
+  --c2:#ff00cc;      /* rosa neon */
+  --c3:#ffe066;      /* amarelo suave */
+  --glass-bg: rgba(255,255,255,.06);
+  --glass-bd: rgba(255,255,255,.18);
 }
-.container {
-  max-width: 960px;
-  margin: 60px auto;
-  padding: 40px;
+
+/* Fundo com gradiente animado + ruído sutil */
+.bg{
+  position: fixed; inset: 0; z-index:-2;
+  background: radial-gradient(1200px 900px at 10% 10%, rgba(0,229,255,.2), transparent 60%),
+              radial-gradient(900px 700px at 90% 20%, rgba(255,0,204,.16), transparent 60%),
+              linear-gradient(120deg, #0b0f1a, #0a0812 60%, #0b0f1a);
+  animation: bgMove 20s ease-in-out infinite alternate;
+}
+@keyframes bgMove{
+  0%{ filter:hue-rotate(0deg) brightness(0.9); }
+  100%{ filter:hue-rotate(20deg) brightness(1); }
+}
+
+html,body{ margin:0; padding:0; color:#fff; font-family: 'Orbitron', system-ui, sans-serif; }
+.container{ position:relative; z-index:1; padding:32px 20px 60px; max-width:1200px; margin:0 auto; }
+
+/* Nav neon */
+.nav-central{ display:flex; justify-content:center; gap:18px; margin-bottom:16px; flex-wrap:wrap; }
+.nav-central .neon{
+  text-decoration:none; font-weight:700; font-size:16px; letter-spacing:.3px;
+  color:var(--c1);
+  text-shadow: 0 0 6px var(--c1), 0 0 16px rgba(0,229,255,.6);
+  border:1px solid rgba(0,229,255,.25);
+  padding:8px 12px; border-radius:10px; backdrop-filter: blur(2px);
+  transition:.25s;
+}
+.nav-central .neon:hover{
+  color:#fff; box-shadow:0 0 18px rgba(0,229,255,.55);
+  transform:translateY(-2px);
+}
+
+/* Título + equalizer */
+.hero{ text-align:center; margin:10px auto 24px; }
+.titulo{
+  font-family:'Bungee', cursive;
+  font-size: clamp(28px, 4.2vw, 56px);
+  color:#fff;
+  text-shadow:
+    0 0 8px var(--c2),
+    0 0 22px rgba(255,0,204,.6),
+    0 0 42px rgba(255,0,204,.35);
+  letter-spacing: 1px;
+  margin: 4px 0 10px;
+}
+.sub{ color:#cbd5e1; opacity:.85; margin: 0; }
+
+.equalizer{ display:inline-flex; gap:6px; height:24px; margin-top:12px; }
+.equalizer span{
+  display:block; width:6px; background:linear-gradient(#fff,var(--c1));
+  box-shadow:0 0 12px rgba(0,229,255,.6);
+  animation:bar 1s ease-in-out infinite;
+}
+.equalizer span:nth-child(2){ animation-delay:.1s }
+.equalizer span:nth-child(3){ animation-delay:.2s }
+.equalizer span:nth-child(4){ animation-delay:.3s }
+.equalizer span:nth-child(5){ animation-delay:.4s }
+@keyframes bar{
+  0%,100%{ height:8px; }
+  50%{ height:24px; }
+}
+
+/* Grade de cards (embeds) */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.card{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-bd);
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(255, 238, 90, 0.884);
-  text-align: center;
+  padding: 14px 14px 18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  backdrop-filter: blur(8px);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
 }
+.card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,0,204,.35);
+  box-shadow: 0 12px 50px rgba(255,0,204,.2);
+}
+.card-titulo{
+  margin:4px 6px 12px; font-size:16px; color:#e2e8f0; font-weight:700;
+}
+.embed-wrap{ border-radius:12px; overflow:hidden; }
+
+/* Artistas favoritos */
+.artistas{ margin-top:36px; }
+.sec-titulo{ text-align:center; margin:0 0 14px; color:#e2e8f0; font-size:20px; font-weight:700; }
+.artistas-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:18px;
+}
+.artista{
+  display:flex; flex-direction:column; align-items:center; text-decoration:none; color:#fff;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-bd);
+  border-radius:16px; padding:14px;
+  transition:.25s; backdrop-filter: blur(6px);
+}
+.artista img{
+  width:120px; height:120px; object-fit:cover; border-radius:50%;
+  box-shadow:0 0 18px rgba(255,255,255,.2);
+}
+.artista span{ margin-top:10px; font-weight:700; }
+.artista:hover{ transform:translateY(-4px); border-color:rgba(0,229,255,.35); }
+
+.rodape{ text-align:center; margin-top:34px; color:#9aa5b1; font-size:12px; opacity:.9; }
+
+/* Ajustes gerais */
+iframe{ display:block; width:100%; border:0; }

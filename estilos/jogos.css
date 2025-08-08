@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -40,15 +41,25 @@ canvas#pixelCanvas {
   font-size: 32px;
   color: #ff66cc;
   text-shadow: 0 0 5px #ff66cc;
+  margin-bottom: 110px;
 }
 
 .galeria-jogos {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
   flex-wrap: wrap;
+  /* permite quebrar linha se não couber */
+  justify-content: center;
+  /* centraliza */
+  gap: 20px;
+  /* espaço entre os cards */
 }
+
+.jogo-card img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 
 .jogo-card {
   background-color: rgba(255, 255, 255, 0.05);
@@ -56,9 +67,10 @@ canvas#pixelCanvas {
   border-radius: 12px;
   padding: 16px;
   width: 300px;
-  height: 420px; /* altura aumentada */
+  height: 420px;
   box-shadow: 0 0 15px #0ff;
   display: flex;
+  flex: 0 0 250px;
   flex-direction: column;
   align-items: center;
   gap: 12px;
@@ -67,13 +79,15 @@ canvas#pixelCanvas {
 
 .jogo-card img {
   width: 100%;
-  height: 350px; /* altura maior para imagem */
+  height: 350px;
+  /* altura maior para imagem */
   object-fit: cover;
   border-radius: 8px;
 }
 
 .jogo-card h2 {
-  margin-top: auto; /* empurra o título para o final do card */
+  margin-top: auto;
+  /* empurra o título para o final do card */
   font-size: 22px;
   color: #fff;
   text-shadow: 0 0 4px #0ff;

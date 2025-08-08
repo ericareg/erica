@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Meus Hobbies</title>
-  <link rel="stylesheet" href="estilos/musica.css">
+  <meta charset="UTF-8" />
+  <title>Músicas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="estilos/musica.css" />
 </head>
 <body>
+  <!-- Fundo animado -->
+  <div class="bg"></div>
+
+  <div class="container">
+    <nav class="nav-central">
+      <a href="index.html" class="neon">🏠 Home</a>
+      <a href="hobbies.html" class="neon" onclick="tocarSom()">🎨 Gostos</a>
+      <a href="familia.html" class="neon" onclick="tocarSom()">👨‍👩‍👧 Pessoas</a>
+      <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
+    </nav>
 
 
+    <header class="hero">
+      <h1 class="titulo">🎵 Minhas Músicas 🎵</h1>
+      <div class="equalizer" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <div class="embed-wrap">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/2OzhQlSqBEmt7hmkYxfT6m?utm_source=generator" 
+            width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="embed-wrap">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5w40ZYhbBMAlHYNDaVJIUu?utm_source=generator"
+            width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="embed-wrap">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/09LrGvT9KsACH66RHYMDyR?utm_source=generator"
+            width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="artistas">
+      <h2 class="sec-titulo">Artistas favoritos</h2>
+      <div class="artistas-grid">
+        <a class="artista" href="https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR" target="_blank" rel="noopener">
+          <img src="img/sabrina.avif" alt="Artista 1" />
+          <span>Sabrina Carpenter</span>
+        </a>
+        <a class="artista" href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener">
+          <img src="img/post.jpg" alt="Artista 2" />
+          <span>Post Malone</span>
+        </a>
+        <a class="artista" href="https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s" target="_blank" rel="noopener">
+          <img src="img/matue.webp" alt="Artista 3" />
+          <span>Matuê</span>
+        </a>
+        <a class="artista" href="https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V" target="_blank" rel="noopener">
+          <img src="img/cbjr.webp" alt="Artista 4" />
+          <span>Charlie Brown jr</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/musicas.js"></script>
 </body>
 </html>

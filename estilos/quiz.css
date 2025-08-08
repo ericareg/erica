@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #1a001a, #330033, #660066);
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  text-shadow: 0 0 8px #ff66cc, 0 0 16px rgba(255,102,204,.5);
+  margin-bottom: 20px;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(255,102,204,0.4);
+  border: 1px solid rgba(255,102,204,0.4);
+}
+
+label {
+  font-size: 1rem;
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  color: #ffccff;
+  text-shadow: 0 0 4px #ff66cc;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 5px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(16, 15, 15);
+  box-shadow: 0 0 8px rgba(255,102,204,0.3);
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #ff66cc;
+}
+
+button {
+  background: #ff66cc;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: .3s;
+  box-shadow: 0 0 10px #ff66cc;
+}
+
+button:hover {
+  background: #ff4db8;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff66cc;
+}
+
+.voltar {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ff66cc;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff66cc;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+nav a {
+  display: inline-block;
+  margin: 10px;
+  padding: 8px 16px;
+  border: 2px solid #ff66cc;
+  border-radius: 8px;
+  color: #ff66cc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff66cc;
+}
+
+nav a:hover {
+  background-color: #ff66cc;
+  color: white;
+  box-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+}

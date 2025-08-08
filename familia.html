@@ -1,18 +1,79 @@
-<!-- dog.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <title>Meu Cachorro</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Pessoas Especiais</title>
+  <link rel="stylesheet" href="estilos/familia.css">
 </head>
+
 <body>
-  <h1>🐾 Este é o Thor 🐾</h1>
-  <p>Thor é meu cachorro de 3 anos, da raça Shih Tzu. Ele adora dormir, correr atrás de passarinhos e receber carinho na barriga!</p>
-  <div class="galeria">
-    <img src="img/thor1.jpg" alt="Thor deitado">
-    <img src="img/thor2.jpg" alt="Thor brincando">
+  <canvas id="particles"></canvas>
+
+  <div class="container">
+    <nav class="nav-central">
+      <a href="index.html" class="neon">🏠 Home</a>
+      <a href="hobbies.html" class="neon" onclick="tocarSom()">🎨 Gostos</a>
+      <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
+    </nav>
+    <section class="carrossel-section">
+      <h2>💖 Família</h2>
+      <div class="carrossel">
+        <button class="btn anterior">&#10094;</button>
+        <div class="carrossel-container">
+          <img src="img/familia.jpg" alt="Família 1">
+          <img src="img/mamae.jpg" alt="Família 2">
+          <img src="img/familia3.jpg" alt="Família 3">
+          <img src="img/luiza1.jpg" alt="Família 3">
+          <img src="img/luiza.jpg" alt="Família 3">
+          <img src="img/luiza3.jpg" alt="Família 3">
+          <img src="img/lupe.jpg" alt="Família 3">
+
+
+
+        </div>
+        <button class="btn proximo">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="carrossel-section">
+      <h2>👯 Amigos</h2>
+      <div class="carrossel">
+        <button class="btn anterior">&#10094;</button>
+        <div class="carrossel-container">
+          <img src="img/migos1.jpg" alt="Amigo 1">
+          <img src="img/gays.jpeg" alt="Amigo 1">
+          <img src="img/hanna.jpg" alt="Amigo 2">
+          <img src="img/migos.jpeg" alt="Amigo 3">
+          <img src="img/migos4.jpg" alt="Amigo 3">
+          <img src="img/migos5.JPG" alt="Amigo 3">
+          <img src="img/migos6.jpg" alt="Amigo 3">
+          <img src="img/livian.jpg" alt="Amigo 3">
+          <img src="img/mgos3.jpg" alt="Amigo 3">
+        </div>
+        <button class="btn proximo">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="carrossel-section">
+      <h2>❤️ Namorado</h2>
+      <div class="carrossel">
+        <button class="btn anterior">&#10094;</button>
+        <div class="carrossel-container">
+          <img src="img/namorado.jpg" alt="Namorado 1">
+          <img src="img/namorado2.jpg" alt="Namorado 2">
+          <img src="img/namorado3.jpg" alt="Namorado 3">
+          <img src="img/namorado4.jpg" alt="Namorado 3">
+          <img src="img/namorado5.jpg" alt="Namorado 3">
+          <img src="img/namorado6.jpg" alt="Namorado 3">
+        </div>
+        <button class="btn proximo">&#10095;</button>
+      </div>
+    </section>
+
   </div>
-  <a href="index.html">🔙 Voltar</a>
+
+  <script src="js/familia.js"></script>
 </body>
+
 </html>

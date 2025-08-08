@@ -8,37 +8,38 @@
 </head>
 
 <body>
-  <video autoplay muted loop id="bg-video">
-    <source src="videos/sopa.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo HTML5.
-  </video>
+  <div class="video-bg">
+    <iframe class="video-bg__iframe"
+      src="https://www.youtube.com/embed/W8INAksqL9g?autoplay=1&mute=1&loop=1&playlist=W8INAksqL9g&controls=0&modestbranding=1&showinfo=0&rel=0&playsinline=1"
+      title="YouTube background" frameborder="0" allow="autoplay; encrypted-media"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+  </div>
+
   <canvas id="grainCanvas"></canvas>
 
   <div class="container">
     <nav class="nav-central">
-      <a href="index.html" class="neon">🏠 Início</a>
-      <a href="hobbies.html" class="neon">💖 Hobbies</a>
-      <a href="jogos.html" class="neon">🎮 Jogos</a>
+      <a href="index.html" class="neon">🏠 Home</a>
+      <a href="hobbies.html" class="neon" onclick="tocarSom()">🎨 Gostos</a>
+      <a href="familia.html" class="neon" onclick="tocarSom()">👨‍👩‍👧 Pessoas</a>
+      <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
     </nav>
 
     <h1 class="titulo">🍕 Minhas Comidas Favoritas 🍰</h1>
 
     <div class="galeria-comidas">
       <div class="comida-card">
-        <img src="img/pizza.jpg" alt="Pizza">
-        <h2>Pizza</h2>
+        <img src="img/sushi.jpg" alt="Pizza">
       </div>
       <div class="comida-card">
-        <img src="img/sushi.jpg" alt="Sushi">
-        <h2>Sushi</h2>
+        <img src="img/galeto.jpg" alt="Sushi">
       </div>
       <div class="comida-card">
-        <img src="img/brigadeiro.jpg" alt="Brigadeiro">
-        <h2>Brigadeiro</h2>
+        <img src="img/churras.webp" alt="Brigadeiro">
       </div>
       <div class="comida-card">
-        <img src="img/macarrao.jpg" alt="Macarrão">
-        <h2>Macarrão</h2>
+        <img src="img/strog.webp" alt="Macarrão">
       </div>
     </div>
   </div>

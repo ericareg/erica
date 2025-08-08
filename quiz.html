@@ -1,31 +1,63 @@
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Quiz Interativo</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="estilos/quiz.css">
 </head>
+
 <body>
+  <nav class="nav-central">
+    <a href="index.html" class="neon">🏠 Home</a>
+    <a href="hobbies.html" class="neon" onclick="tocarSom()">🎨 Gostos</a>
+    <a href="familia.html" class="neon" onclick="tocarSom()">👨‍👩‍👧 Pessoas</a>
+    <a href="quiz.html" class="neon" onclick="tocarSom()">🧠 Quiz</a>
+  </nav>
   <h1>🧠 Quiz: Você me conhece mesmo?</h1>
+
   <form id="quizForm">
     <label>1. Qual é a minha cor preferida?</label><br>
     <input type="text" id="q1"><br><br>
+
     <label>2. Nome do meu cachorro?</label><br>
     <input type="text" id="q2"><br><br>
+
     <label>3. Qual minha comida favorita?</label><br>
-    <input type="text" id="q2"><br><br>
-    <label>4. Qual o nome da minha irmã gemea?</label><br>
-    <input type="text" id="q2"><br><br>
-    <label>5. Qual meu filme favorito?</label><br>
-    <input type="text" id="q2"><br><br>
-    <label>6. Em que periodo estou?</label><br>
-    <input type="text" id="q2"><br><br>
-    <label>7. Qual minha música favorita?</label><br>
-    <input type="text" id="q2"><br><br>
+    <input type="text" id="q3"><br><br>
+
+    <label>4. Qual o nome da minha irmã gêmea?</label><br>
+    <input type="text" id="q4"><br><br>
+
+    <label>5. Quais dessas comidas eu gosto?</label><br>
+    <label><input type="checkbox" name="comida" value="Galeto"> Galeto</label><br>
+    <label><input type="checkbox" name="comida" value="Sushi"> Sushi</label><br>
+    <label><input type="checkbox" name="comida" value="Figado"> Figado</label><br>
+    <label><input type="checkbox" name="comida" value="Brocolis"> Brocolis</label><br><br>
+
+    <!-- Pergunta com seletor -->
+    <label>6. Em qual período da faculdade estou?</label><br>
+    <select id="q6">
+      <option value="">Selecione...</option>
+      <option value="1">1º período</option>
+      <option value="2">2º período</option>
+      <option value="3">3º período</option>
+      <option value="4">4º período</option>
+      <option value="5">5º período</option>
+      <option value="6">6º período</option>
+      <option value="7">7º período</option>
+      <option value="8">8º período</option>
+    </select><br><br>
+
+    <label>7. Qual meu jogo favorito?</label><br>
+    <input type="text" id="q7"><br><br>
+
     <button type="submit">Enviar</button>
   </form>
+
   <div id="resultado"></div>
 
-  <a href="index.html">🔙 Voltar</a>
   <script src="js/quiz.js"></script>
 </body>
+
 </html>
